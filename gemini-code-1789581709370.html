@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Kirubakaran K | Assistant Professor, ENT-HNS | AIIMS Kalyani</title>
+    <meta name="description" content="Professional portfolio of Dr. Kirubakaran K, Assistant Professor, Department of ENT-HNS, AIIMS Kalyani. Specializing in Otology, Rhinology, Skull Base Surgery, and AI in Otolaryngology.">
+    <meta name="keywords" content="Dr. Kirubakaran K, AIIMS Kalyani, ENT Surgeon, Otolaryngology, Cochlear Implant, PGIMER, JIPMER">
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #0284c7;
+            --accent-light: #38bdf8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --transition: all 0.25s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { color: var(--text); background-color: var(--bg); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Modern Glassmorphic Header */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo { font-weight: 700; font-size: 1.15rem; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-links { display: flex; list-style: none; gap: 1.8rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-light); transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 9rem 2rem 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+        
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -1px; }
+        .hero p { font-size: 1.15rem; color: #94a3b8; margin-bottom: 1.5rem; font-weight: 400; }
+
+        .social-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+        .social-icons a {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .social-icons a:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+
+        /* Layout Container */
+        .container { max-width: 1100px; margin: -2.5rem auto 4rem auto; padding: 0 1.5rem; position: relative; z-index: 3; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+        section h2 i { color: var(--accent); }
+
+        /* Grid Frameworks */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border);
+            margin-bottom: 1.8rem;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .timeline-item h3 { font-size: 1.05rem; font-weight: 600; color: var(--primary); }
+        .timeline-item .place { font-size: 0.95rem; font-weight: 500; color: var(--accent); margin-bottom: 0.2rem; }
+        .timeline-item .date { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 500; }
+        .timeline-item p, .timeline-item ul { font-size: 0.92rem; color: var(--text); }
+        .timeline-item ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+
+        /* Modern Tags & Badges */
+        .tag-group { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .tag {
+            background: #f1f5f9;
+            color: var(--primary);
+            padding: 0.45rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+        .tag.highlight { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+
+        /* Publications & Lists */
+        .pub-list { list-style: decimal; padding-left: 1.2rem; }
+        .pub-list li { font-size: 0.92rem; margin-bottom: 1rem; color: var(--text); line-height: 1.5; }
+        .styled-list { list-style: none; padding: 0; }
+        .styled-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.92rem;
+            color: var(--text);
+        }
+        .styled-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Horizontal Gallery */
+        .horizontal-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.2rem;
+            padding: 0.5rem 0.2rem 1.2rem 0.2rem;
+            scroll-behavior: smooth;
+        }
+        .horizontal-gallery::-webkit-scrollbar { height: 6px; }
+        .horizontal-gallery::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .horizontal-gallery::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+        .gallery-card {
+            min-width: 260px;
+            max-width: 260px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+        .gallery-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+        .gallery-card img { width: 100%; height: 170px; object-fit: cover; }
+        .gallery-card p { padding: 0.8rem; font-size: 0.85rem; font-weight: 500; text-align: center; color: var(--text); }
+
+        /* Contact Section */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #f8fafc;
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            font-size: 0.92rem;
+        }
+        .contact-item i { color: var(--accent); font-size: 1.1rem; }
+
+        /* Footer */
+        footer { text-align: center; padding: 2rem; background: var(--primary); color: #94a3b8; font-size: 0.88rem; }
+
+        @media(max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.1rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Dr. Kirubakaran K</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Research</a></li>
+                <li><a href="#academics">Conferences & Awards</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFL_KkghWiOJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706024655621?e=1791417600&v=beta&t=KSN44bD-xKW-WK9EKKczU1WHsgLbWi4iOk338WikNTo" alt="Dr. Kirubakaran K" class="profile-img">
+            <h1>Dr. Kirubakaran K</h1>
+            <p>Assistant Professor, Department of ENT-HNS, AIIMS Kalyani</p>
+            
+            <div class="social-icons">
+                <a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+                <a href="https://in.linkedin.com/in/kirubakaran-k-6827a994" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/thattamildoc/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:kirubakaran.ent@aiimskalyani.edu.in" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- About / Objective -->
+        <div class="card" id="about">
+            <h2><i class="fa-solid fa-user-doctor"></i> Profile & Objectives</h2>
+            <p style="font-size: 1rem; color: var(--text); line-height: 1.7;">
+                Advancing clinical practice, academic teaching, and research in otolaryngology—specializing in otology, advanced rhinology, lateral skull base surgery, and AI applications in medical diagnostics. Committed to clinical excellence, resident mentorship, and institutional surgical development.
+            </p>
+        </div>
+
+        <!-- Professional Experience & Education Grid -->
+        <div class="grid-2">
+            <div class="card" id="experience" style="margin-bottom: 0;">
+                <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+                
+                <div class="timeline-item">
+                    <h3>Assistant Professor</h3>
+                    <div class="place">AIIMS Kalyani, West Bengal</div>
+                    <div class="date">January 2025 – Present</div>
+                    <p>Leading clinical and surgical ENT services, integrating AI diagnostics, and mentoring residents.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Attending Consultant</h3>
+                    <div class="place">Fortis Kangra, Himachal Pradesh</div>
+                    <div class="date">Feb 2024 – Nov 2024</div>
+                    <p>Managed outpatient and complex otologic/rhinologic surgical workflows.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Senior Resident</h3>
+                    <div class="place">PGIMER, Chandigarh</div>
+                    <div class="date">Jan 2021 – Jan 2024</div>
+                    <p>Performed advanced surgeries (cochlear implants, FESS, mastoidectomy) and specialized sub-specialty clinics.</p>
+                </div>
+            </div>
+
+            <div class="card" id="education" style="margin-bottom: 0;">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                
+                <div class="timeline-item">
+                    <h3>MS in ENT</h3>
+                    <div class="place">PGIMER, Chandigarh</div>
+                    <div class="date">December 2020</div>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>MBBS</h3>
+                    <div class="place">JIPMER, Puducherry</div>
+                    <div class="date">December 2015</div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h3 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.8rem;"><i class="fa-solid fa-id-badge" style="color: var(--accent);"></i> Professional Memberships</h3>
+                    <div class="tag-group">
+                        <span class="tag highlight">IASSA</span>
+                        <span class="tag highlight">FRCSIT</span>
+                        <span class="tag highlight">Rhinology Society of India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research and Publications -->
+        <div class="card" id="publications" style="margin-top: 2rem;">
+            <h2><i class="fa-solid fa-book-medical"></i> Selected Publications</h2>
+            <ol class="pub-list">
+                <li>Chiinhauvung, Mohindra S, Ramavat AS, Sharma A, Sharma S, <strong>Kothandaraman K</strong>. Excision of vocal fold lesions and narrow band imaging: a comparative study. <em>Indian J Otolaryngol Head Neck Surg</em>. 2026;78(2):872-80.</li>
+                <li>Dutta M, Maiti M, Ali H, Mukherjee A, Kharwanlang M, <strong>Kothandaraman K</strong>. An Unusual Co-Existence of Isolated Sphenoidal Fungal Rhinosinusitis and Sphenochoanal Polyp. <em>Ear, Nose & Throat Journal</em>. 2025;01455613251348312.</li>
+                <li>Bhatia MS, Jaiswal AK, Sharma N, <strong>Kothandaraman K</strong>, Bansal S, et al. Percutaneous dilatational tracheostomy compared to surgical tracheostomy for emergency medical patients requiring prolonged mechanical ventilation. <em>Muller J Med Sci Res</em>. 2024;15(2):114-121.</li>
+                <li><strong>Kothandaraman K</strong>, Panda NK, Patro SK. Evaluating the efficacy of a novel periosteal flap in cochlear implantation: a retrospective surgical audit at a tertiary teaching hospital. <em>Egyptian J Otolaryngol</em>. 2024;40(1):56.</li>
+                <li><strong>Kothandaraman K</strong>, Mohindra S, Panda NK, Nayak GR, Munjal S. Unveiling the Allergy-Meniere Connection: Impact of Allergen Positivity on Meniere's Disease Severity. <em>Indian J Otolaryngol Head Neck Surg</em>. 2024;76(2):1509-15.</li>
+                <li>Raj R, Rathod R, Bansal S, Gopal KR, <strong>Kothandaraman K</strong>, Kaur H, et al. Surveillance for COVID-19 associated mucormycosis. <em>Ann Indian Acad Otorhinolaryngol Head Neck Surg</em>. 2024;8(1):1-15.</li>
+                <li><strong>Kothandaraman K</strong>, Mohindra S, Arungovind K, Mahendru S. Prevalence of Common Aeroallergens in Allergic Rhinitis and Correlation with Bronchial Asthma: Study on 798 Patients. <em>Indian J Otolaryngol Head Neck Surg</em>. 2023;75(3):1651-9.</li>
+                <li><strong>Kothandaraman K</strong>, Gupta R. Idiopathic acquired dacryocystocele in an adult: case report of a rare entity. <em>Egyptian J Otolaryngol</em>. 2022;38(1):151.</li>
+                <li>Vijayakumar A, <strong>Kothandaraman K</strong>, Patro SK. Intention to treat versus per protocol analysis in papillary thyroid microcarcinoma trials. <em>Eur Arch Otorhinolaryngol</em>. 2022.</li>
+                <li>Roshan K, Verma K, <strong>Kothandaraman K</strong>. The triad of denial, neglect, behavioral disorder causing habitual multiple foreign body ingestion. <em>J Laryngol Voice</em>. 2022;12(1):11-4.</li>
+            </ol>
+        </div>
+
+        <!-- Awards, Talks, Presentations & Workshops -->
+        <div class="card" id="academics">
+            <h2><i class="fa-solid fa-award"></i> Awards, Presentations & Workshops</h2>
+            
+            <div class="grid-2" style="margin-bottom: 2.5rem;">
+                <div>
+                    <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-trophy" style="color: #eab308;"></i> Awards & Honors</h3>
+                    <ul class="styled-list">
+                        <li><strong>Best Faculty Poster Award</strong> (Dr Anoop Roy award, faculty category) – Sphenoid sinus lateral recess CSF leak, RHINOCON (November 2025).</li>
+                        <li><strong>First Place</strong> – Sleep Apnea Quiz, IASSACON (2022).</li>
+                        <li><strong>First Place</strong> – Poster Presentation, IAOHNS (2023).</li>
+                        <li><strong>Best Dissection Award</strong> – Hands-on Training Course in Laryngotracheal Reconstruction, PGIMER (2021).</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i> Invited Talks & Presentations</h3>
+                    <ul class="styled-list">
+                        <li>Talk on Laryngotracheal Trauma – Advanced Laryngotracheal Workshop, AIIMS Kalyani (September 2025).</li>
+                        <li>Invited Talk on Acute Airway Management of Laryngotracheal Trauma – COHNS (October 2025).</li>
+                        <li>Poster Presentation on Sphenoid Sinus Lateral Recess CSF Leak – RHINOCON (November 2025).</li>
+                        <li>Invited Talk on Posterior Fossa CSF Leak – Neurosurgery Update, SGPGI Lucknow (April 2025).</li>
+                        <li>Invited Talk on Principles of Endoscopic Endonasal Skull Base Surgery – AIIMS ORL Conclave (March 2026).</li>
+                        <li>Served as Quiz Master in Residents Quiz – ORL-HNS Conclave (March 2026).</li>
+                        <li>Served as Judge in Residents' Paper Presentation – ORL-HNS Conclave (March 2026).</li>
+                        <li>Poster Presentation: Posterior Fossa CSF Leak (Common Symptoms and Uncommon Diagnosis) – 1st Annual Conference of All India Rhinology Society (2023).</li>
+                        <li>Paper Presentation: Factors Predicting Surgical Success of Palatal Surgeries in OSA – 9th IASSACON (2022).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent);"></i> Conferences & Professional Workshops Attended</h3>
+                <ul class="styled-list" style="columns: 2; column-gap: 2rem;">
+                    <li>2025 Global Grand Rounds: Challenges & Controversies in Pediatric Otolaryngology (Delegate, March 2025)</li>
+                    <li>Systematic Review & Meta-Analysis Workshop (Participant, March 2025)</li>
+                    <li>Faculty Development Programme (FDP), AIIMS Kalyani (Participant, March 2025)</li>
+                    <li>Surgery to Speech AVT Therapy Workshop, Cochlear Office, Mumbai (Participant, July 2025)</li>
+                    <li>CI ACCELERATE Surgical Workshop (Participant, September 2025)</li>
+                    <li>Meta-Analysis with R Workshop (Participant, July 2025)</li>
+                    <li>Workshop on Grant Writing, MRU (Participant, February 2026)</li>
+                    <li>Workshop on FEES & PHONOCON (Participant, February 2026)</li>
+                    <li>Advanced Laryngotracheal Surgery Cadaveric Dissection Workshop (Organizer/Faculty, AIIMS Kalyani, September 2025)</li>
+                    <li>Endoscopic Skull Base Surgery Cadaveric Course, Jodhpur (Participant, January 2025)</li>
+                    <li>IASSACON 2024, Chennai (Delegate)</li>
+                    <li>CIGICON 2024 & CI Dissection Workshop (Delegate and Dissector)</li>
+                    <li>9th AIIMS Facial Plastics Workshop (Delegate and Observer, 2022)</li>
+                    <li>9th IASSACON and Calculate Sleep Course (Delegate, Presenter & Quiz Winner, 2022)</li>
+                    <li>FRCST 10th National Facial Plastics Course (Dissecting Surgeon)</li>
+                    <li>1st Annual Conference of All India Rhinology Society (Delegate, 2019)</li>
+                    <li>12th Hands-on Workshop, Head & Neck Dissection, Basic/Advanced FESS, & 18th Temporal Bone Dissection Course (Organizer, 2019)</li>
+                    <li>Hands-on Workshop on Allergen Immunotherapy Management, PGIMER (Delegate, November 2018)</li>
+                    <li>32nd Annual Conference of All India Rhinology Society (Delegate & Quiz Runner-Up, 2019)</li>
+                    <li>Hands-on Training Course in Laryngotracheal Reconstruction, PGIMER (Delegate & Best Dissection Award, 2019)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Horizontal Scrolling Photo Gallery -->
+        <div class="card" id="gallery">
+            <h2><i class="fa-solid fa-images"></i> Gallery</h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Scroll horizontally to explore workshop sessions, conferences, and surgical events.</p>
+            
+            <div class="horizontal-gallery">
+                <div class="gallery-card">
+                    <img src="images/photo1.jpg" alt="Workshop Session" onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=500&q=80'">
+                    <p>AIIMS Kalyani Workshop</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="images/photo2.jpg" alt="Conference Presentation" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80'">
+                    <p>RHINOCON Conference</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="images/photo3.jpg" alt="Surgical Theater" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80'">
+                    <p>Operating Theater Work</p>
+                </div>
+                <div class="gallery-card">
+                    <img src="images/photo4.jpg" alt="Academic Meet" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80'">
+                    <p>Academic Presentation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card" id="contact">
+            <h2><i class="fa-solid fa-address-book"></i> Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>kirubakaran.ent@aiimskalyani.edu.in</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-hospital"></i>
+                    <span>Dept of ENT-HNS, AIIMS Kalyani, WB</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://in.linkedin.com/in/kirubakaran-k-6827a994" target="_blank">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dr. Kirubakaran K. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
