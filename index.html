@@ -13,9 +13,9 @@
 
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #0284c7;
-            --accent-light: #38bdf8;
+            --primary: #1e1b4b;
+            --accent: #2563eb;
+            --accent-light: #60a5fa;
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text: #334155;
@@ -28,9 +28,9 @@
         body { color: var(--text); background-color: var(--bg); line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
 
-        /* Modern Glassmorphic Header */
+        /* Colorful Gradient Header */
         header {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             position: fixed;
@@ -48,19 +48,36 @@
             padding: 1rem 2rem;
         }
 
-        .logo { font-weight: 700; font-size: 1.15rem; color: var(--primary); letter-spacing: -0.5px; }
+        .logo { font-weight: 700; font-size: 1.15xl; color: var(--primary); letter-spacing: -0.5px; background: linear-gradient(135deg, #2563eb, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: flex; list-style: none; gap: 1.5rem; flex-wrap: wrap; }
         .nav-links a { font-weight: 500; font-size: 0.9rem; color: var(--text-light); transition: var(--transition); }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Section */
+        /* Colorful Vibrant Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%);
             color: white;
-            padding: 9rem 2rem 5rem 2rem;
+            padding: 9rem 2rem 6rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 70%);
+            animation: pulseGlow 10s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
 
         .hero-content { max-width: 850px; margin: 0 auto; position: relative; z-index: 2; }
@@ -70,64 +87,72 @@
             height: 170px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             margin-bottom: 1.5rem;
         }
 
-        .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -1px; }
-        .hero-subtitle { font-size: 1.25rem; color: var(--accent-light); font-weight: 600; margin-bottom: 1rem; }
-        .hero p { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 1.8rem; font-weight: 400; line-height: 1.6; max-width: 750px; margin-left: auto; margin-right: auto; }
+        .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -1px; }
+        .hero-subtitle { font-size: 1.25rem; color: #93c5fd; font-weight: 600; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; color: #e2e8f0; margin-bottom: 1.8rem; font-weight: 400; line-height: 1.6; max-width: 750px; margin-left: auto; margin-right: auto; }
 
         .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
         .btn {
-            background: var(--accent);
+            background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
             color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.75rem 1.6rem;
+            border-radius: 30px;
             font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
-        .btn:hover { background: #02699c; transform: translateY(-2px); }
-        .btn-outline {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .btn-outline:hover { background: rgba(255,255,255,0.15); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4); }
 
         .social-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         .social-icons a {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
             color: white;
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
         }
-        .social-icons a:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+        .social-icons a:hover { background: #2563eb; border-color: #2563eb; transform: translateY(-3px); }
 
         /* Layout Container */
         .container { max-width: 1100px; margin: -2.5rem auto 4rem auto; padding: 0 1.5rem; position: relative; z-index: 3; }
 
         .card {
             background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             border: 1px solid var(--border);
             padding: 2.5rem;
             margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2563eb, #9333ea);
         }
 
         section h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--primary);
             margin-bottom: 1.8rem;
             display: flex;
@@ -137,96 +162,72 @@
             border-bottom: 2px solid var(--border);
             padding-bottom: 0.75rem;
         }
-        section h2 i { color: var(--accent); }
+        section h2 i { color: #2563eb; background: #eff6ff; padding: 10px; border-radius: 12px; }
 
         /* Grid Frameworks */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
 
-        /* Research Focus Cards */
+        /* Research Focus Cards with Vibrant Borders */
         .focus-card {
-            background: #f8fafc;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             border: 1px solid var(--border);
+            border-top: 4px solid #2563eb;
             border-radius: 12px;
             padding: 1.5rem;
             transition: var(--transition);
         }
-        .focus-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.04); }
+        .focus-card:nth-child(2) { border-top-color: #9333ea; }
+        .focus-card:nth-child(3) { border-top-color: #06b6d4; }
+        .focus-card:nth-child(4) { border-top-color: #10b981; }
+        .focus-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
         .focus-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .focus-card h3 i { color: var(--accent); }
+        .focus-card h3 i { color: #2563eb; }
         .focus-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.5; }
-
-        /* Project Status Table / Cards */
-        .project-item {
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .project-info h4 { font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 0.2rem; }
-        .project-info p { font-size: 0.85rem; color: var(--text-light); }
-        .status-badge {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .status-ongoing { background: #e0f2fe; color: #0369a1; }
-        .status-manuscript { background: #fef3c7; color: #b45309; }
-        .status-multicentre { background: #dcfce7; color: #15803d; }
-        .status-concept { background: #f1f5f9; color: #475569; }
 
         /* Timeline Items */
         .timeline-item {
             position: relative;
-            padding-left: 1.5rem;
-            border-left: 2px solid var(--border);
+            padding-left: 1.8rem;
+            border-left: 2px solid #cbd5e1;
             margin-bottom: 1.8rem;
         }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -6px;
+            left: -7px;
             top: 4px;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background: var(--accent);
+            background: linear-gradient(135deg, #2563eb, #9333ea);
         }
         .timeline-item h3 { font-size: 1.05rem; font-weight: 600; color: var(--primary); }
-        .timeline-item .place { font-size: 0.95rem; font-weight: 500; color: var(--accent); margin-bottom: 0.2rem; }
-        .timeline-item .date { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 500; }
+        .timeline-item .place { font-size: 0.95rem; font-weight: 500; color: #2563eb; margin-bottom: 0.2rem; }
+        .timeline-item .date { font-size: 0.82rem; color: var(--text-light); margin-bottom: 0.5rem; font-weight: 500; background: #f1f5f9; display: inline-block; padding: 2px 8px; border-radius: 6px; }
         .timeline-item p, .timeline-item ul { font-size: 0.92rem; color: var(--text); }
         .timeline-item ul { padding-left: 1.2rem; margin-top: 0.3rem; }
 
         /* Modern Tags & Badges */
         .tag-group { display: flex; flex-wrap: wrap; gap: 0.6rem; }
         .tag {
-            background: #f1f5f9;
-            color: var(--primary);
-            padding: 0.45rem 0.9rem;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #eff6ff 0%, #f1f5f9 100%);
+            color: #1e40af;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
             font-size: 0.88rem;
-            font-weight: 500;
-            border: 1px solid #e2e8f0;
+            font-weight: 600;
+            border: 1px solid #bfdbfe;
         }
-        .tag.highlight { background: #e0f2fe; color: #0369a1; border-color: #bae6fd; }
+        .tag.highlight { background: linear-gradient(135deg, #f3e8ff 0%, #fdf4ff 100%); color: #7e22ce; border-color: #e9d5ff; }
 
         /* Publications & Lists */
         .pub-list { list-style: decimal; padding-left: 1.2rem; }
         .pub-list li { font-size: 0.92rem; margin-bottom: 1.2rem; color: var(--text); line-height: 1.5; }
         .pub-links { margin-top: 0.3rem; display: flex; gap: 0.8rem; font-size: 0.82rem; font-weight: 600; }
-        .pub-links a { color: var(--accent); display: inline-flex; align-items: center; gap: 0.3rem; }
-        .pub-links a:hover { text-decoration: underline; }
+        .pub-links a { color: #2563eb; display: inline-flex; align-items: center; gap: 0.3rem; background: #eff6ff; padding: 2px 10px; border-radius: 6px; }
+        .pub-links a:hover { background: #dbeafe; }
 
         .styled-list { list-style: none; padding: 0; }
         .styled-list li {
@@ -237,13 +238,12 @@
             color: var(--text);
         }
         .styled-list li::before {
-            content: '•';
+            content: '✦';
             position: absolute;
             left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.2rem;
-            line-height: 1;
+            color: #9333ea;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         /* Horizontal Gallery */
@@ -254,56 +254,61 @@
             padding: 0.5rem 0.2rem 1.2rem 0.2rem;
             scroll-behavior: smooth;
         }
-        .horizontal-gallery::-webkit-scrollbar { height: 6px; }
+        .horizontal-gallery::-webkit-scrollbar { height: 8px; }
         .horizontal-gallery::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
-        .horizontal-gallery::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+        .horizontal-gallery::-webkit-scrollbar-thumb { background: linear-gradient(to right, #2563eb, #9333ea); border-radius: 4px; }
 
         .gallery-card {
             min-width: 260px;
             max-width: 260px;
             background: #fff;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
             border: 1px solid var(--border);
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             transition: var(--transition);
         }
-        .gallery-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+        .gallery-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15); }
         .gallery-card img { width: 100%; height: 170px; object-fit: cover; }
-        .gallery-card p { padding: 0.8rem; font-size: 0.85rem; font-weight: 500; text-align: center; color: var(--text); }
+        .gallery-card p { padding: 0.9rem; font-size: 0.85rem; font-weight: 600; text-align: center; color: var(--primary); background: #f8fafc; }
 
         /* Collaboration Box */
         .collab-box {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 1px solid #bae6fd;
-            border-radius: 12px;
-            padding: 2rem;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
             text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(30, 27, 75, 0.2);
+            position: relative;
+            overflow: hidden;
         }
-        .collab-box h3 { color: #0369a1; font-size: 1.25rem; margin-bottom: 0.5rem; }
-        .collab-box p { color: var(--text); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
+        .collab-box h3 { color: #60a5fa; font-size: 1.5rem; margin-bottom: 0.8rem; }
+        .collab-box p { color: #cbd5e1; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1rem; }
 
         /* Contact Section */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 1rem;
             background: #f8fafc;
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
+            padding: 1.2rem;
+            border-radius: 12px;
             border: 1px solid var(--border);
             font-size: 0.92rem;
+            transition: var(--transition);
         }
-        .contact-item i { color: var(--accent); font-size: 1.1rem; }
+        .contact-item:hover { border-color: #2563eb; background: #eff6ff; }
+        .contact-item i { color: #2563eb; font-size: 1.2rem; background: #e0f2fe; padding: 10px; border-radius: 10px; }
 
         /* Footer */
-        footer { text-align: center; padding: 2rem; background: var(--primary); color: #94a3b8; font-size: 0.88rem; }
+        footer { text-align: center; padding: 2.5rem; background: #0f172a; color: #94a3b8; font-size: 0.88rem; border-top: 1px solid #1e293b; }
 
         @media(max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 2.1rem; }
+            .hero h1 { font-size: 2.2rem; }
             .card { padding: 1.5rem; }
         }
     </style>
@@ -316,8 +321,7 @@
             <div class="logo">Dr. Kirubakaran K</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#research-focus">Research</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research-focus">Research Focus</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#academics">Teaching & Awards</a></li>
@@ -337,7 +341,6 @@
             
             <div class="hero-actions">
                 <a href="#publications" class="btn"><i class="fa-solid fa-file-lines"></i> View Research & Publications</a>
-                <a href="mailto:kirubakaran.ent@aiimskalyani.edu.in" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV & Contact</a>
             </div>
 
             <div class="social-icons">
@@ -372,52 +375,6 @@
                     <h3><i class="fa-solid fa-lightbulb"></i> Translational</h3>
                     <p>Bridging clinical bottlenecks to engineering solutions, device validation, and implementation.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Current Projects Section -->
-        <div class="card" id="projects">
-            <h2><i class="fa-solid fa-diagram-project"></i> Current Research & Development Projects</h2>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Active clinical and technological initiatives driving surgical and diagnostic innovation.</p>
-            
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>AURORA-CI</h4>
-                    <p>Longitudinal cortical reorganization and auditory rehabilitation assessment after cochlear implantation.</p>
-                </div>
-                <span class="status-badge status-ongoing">Ongoing Study</span>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>AI Otoscopy</h4>
-                    <p>Real-time deep-learning detection algorithms for automated tympanic membrane abnormality classification.</p>
-                </div>
-                <span class="status-badge status-manuscript">Manuscript Stage</span>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>Inflammatory Endotyping of CRS</h4>
-                    <p>Multicentric histopathology, biofilm interaction, and cytokine profiling in chronic rhinosinusitis.</p>
-                </div>
-                <span class="status-badge status-multicentre">Multicentre Trial</span>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>Clinical ENT AI & Assistive Technologies</h4>
-                    <p>Computer vision and assistive monitoring frameworks designed for routine ENT examination.</p>
-                </div>
-                <span class="status-badge status-ongoing">Development</span>
-            </div>
-
-            <div class="project-item">
-                <div class="project-info">
-                    <h4>Advanced Surgical Technology</h4>
-                    <p>Engineering-backed conceptual development for precision otologic and skull-base instruments.</p>
-                </div>
-                <span class="status-badge status-concept">Concept Phase</span>
             </div>
         </div>
 
@@ -463,7 +420,7 @@
                     <div class="date">December 2015</div>
                 </div>
 
-                <div style="margin-top: 1.5rem; background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+                <div style="margin-top: 1.5rem; background: #f8fafc; padding: 1rem; border-radius: 12px; border: 1px solid var(--border);">
                     <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5;">
                         <strong style="color: var(--primary);">Author Identity Note:</strong> Publications and academic literature authored under <strong>Kothandaraman K</strong> correspond to <strong>Dr. Kirubakaran K</strong>.
                     </p>
@@ -483,7 +440,7 @@
         <!-- Research and Publications -->
         <div class="card" id="publications" style="margin-top: 2rem;">
             <h2><i class="fa-solid fa-book-medical"></i> Selected Publications</h2>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">For a complete and live list of citations and indexed work, visit <a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank" style="color: var(--accent); font-weight: 600;">Google Scholar profile &rarr;</a></p>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">For a complete and live list of citations and indexed work, visit <a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank" style="color: #2563eb; font-weight: 600;">Google Scholar profile &rarr;</a></p>
             
             <ol class="pub-list">
                 <li>
@@ -527,7 +484,7 @@
 
         <!-- Teaching & Surgical Education -->
         <div class="card" id="academics">
-            <h2><i class="fa-solid id-card-clip"></i> Teaching & Surgical Education</h2>
+            <h2><i class="fa-solid fa-award"></i> Teaching & Surgical Education</h2>
             <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Dedicated faculty involvement in cadaveric training, skull-base courses, resident mentorship, and surgical workshops.</p>
             
             <div class="grid-2" style="margin-bottom: 2.5rem;">
@@ -542,7 +499,7 @@
                 </div>
 
                 <div>
-                    <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i> Invited Faculty Talks & Presentations</h3>
+                    <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-chalkboard-user" style="color: #2563eb;"></i> Invited Faculty Talks & Presentations</h3>
                     <ul class="styled-list">
                         <li>Talk on Laryngotracheal Trauma – Advanced Laryngotracheal Workshop, AIIMS Kalyani (Sep 2025).</li>
                         <li>Invited Talk on Acute Airway Management of Laryngotracheal Trauma – COHNS (Oct 2025).</li>
@@ -556,7 +513,7 @@
             </div>
 
             <div>
-                <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent);"></i> Conferences, Workshops & Organizer Roles</h3>
+                <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench" style="color: #2563eb;"></i> Conferences, Workshops & Organizer Roles</h3>
                 <ul class="styled-list" style="columns: 2; column-gap: 2rem;">
                     <li>Advanced Laryngotracheal Surgery Cadaveric Dissection Workshop (Organizer/Faculty, AIIMS Kalyani, Sep 2025)</li>
                     <li>2025 Global Grand Rounds: Pediatric Otolaryngology (Delegate, Mar 2025)</li>
@@ -610,7 +567,7 @@
         <!-- Collaboration Section -->
         <div class="card" style="padding: 0; background: transparent; border: none; box-shadow: none;">
             <div class="collab-box">
-                <h3><i class="fa-solid fa-handshake"></i> Open for Collaborations</h3>
+                <h3><i class="fa-solid fa-handshake" style="color: #60a5fa;"></i> Open for Collaborations</h3>
                 <p>Interested in collaborative research or academic exchange involving Otology, Cochlear Implantation, Clinical AI / Computer Vision, Medical Device Development, or Multicentric Studies?</p>
                 <a href="mailto:kirubakaran.ent@aiimskalyani.edu.in" class="btn"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
             </div>
