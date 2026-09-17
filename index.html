@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Kirubakaran K | Assistant Professor, ENT-HNS | AIIMS Kalyani</title>
-    <meta name="description" content="Professional portfolio of Dr. Kirubakaran K, Assistant Professor, Department of ENT-HNS, AIIMS Kalyani. Specializing in Otology, Rhinology, Skull Base Surgery, and AI in Otolaryngology.">
-    <meta name="keywords" content="Dr. Kirubakaran K, AIIMS Kalyani, ENT Surgeon, Otolaryngology, Cochlear Implant, PGIMER, JIPMER">
+    <title>Dr. Kirubakaran K | ENT Surgeon & Clinical-Scientist | AIIMS Kalyani</title>
+    <meta name="description" content="Professional portfolio of Dr. Kirubakaran K, Assistant Professor of ENT-HNS at AIIMS Kalyani. Specializing in Otology, Cochlear Implantation, Skull Base Surgery, and AI in Otolaryngology.">
+    <meta name="keywords" content="Dr. Kirubakaran K, Kothandaraman K, AIIMS Kalyani, ENT Surgeon, Otology, Cochlear Implant, Skull Base Surgery, AI in ENT, PGIMER, JIPMER">
     
     <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -49,8 +49,8 @@
         }
 
         .logo { font-weight: 700; font-size: 1.15rem; color: var(--primary); letter-spacing: -0.5px; }
-        .nav-links { display: flex; list-style: none; gap: 1.8rem; }
-        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-light); transition: var(--transition); }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; flex-wrap: wrap; }
+        .nav-links a { font-weight: 500; font-size: 0.9rem; color: var(--text-light); transition: var(--transition); }
         .nav-links a:hover { color: var(--accent); }
 
         /* Hero Section */
@@ -63,7 +63,7 @@
             overflow: hidden;
         }
 
-        .hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+        .hero-content { max-width: 850px; margin: 0 auto; position: relative; z-index: 2; }
         
         .profile-img {
             width: 170px;
@@ -76,7 +76,28 @@
         }
 
         .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -1px; }
-        .hero p { font-size: 1.15rem; color: #94a3b8; margin-bottom: 1.5rem; font-weight: 400; }
+        .hero-subtitle { font-size: 1.25rem; color: var(--accent-light); font-weight: 600; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 1.8rem; font-weight: 400; line-height: 1.6; max-width: 750px; margin-left: auto; margin-right: auto; }
+
+        .hero-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn:hover { background: #02699c; transform: translateY(-2px); }
+        .btn-outline {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.15); }
 
         .social-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
         .social-icons a {
@@ -120,6 +141,48 @@
 
         /* Grid Frameworks */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+
+        /* Research Focus Cards */
+        .focus-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        .focus-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.04); }
+        .focus-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .focus-card h3 i { color: var(--accent); }
+        .focus-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.5; }
+
+        /* Project Status Table / Cards */
+        .project-item {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project-info h4 { font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 0.2rem; }
+        .project-info p { font-size: 0.85rem; color: var(--text-light); }
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .status-ongoing { background: #e0f2fe; color: #0369a1; }
+        .status-manuscript { background: #fef3c7; color: #b45309; }
+        .status-multicentre { background: #dcfce7; color: #15803d; }
+        .status-concept { background: #f1f5f9; color: #475569; }
 
         /* Timeline Items */
         .timeline-item {
@@ -160,7 +223,11 @@
 
         /* Publications & Lists */
         .pub-list { list-style: decimal; padding-left: 1.2rem; }
-        .pub-list li { font-size: 0.92rem; margin-bottom: 1rem; color: var(--text); line-height: 1.5; }
+        .pub-list li { font-size: 0.92rem; margin-bottom: 1.2rem; color: var(--text); line-height: 1.5; }
+        .pub-links { margin-top: 0.3rem; display: flex; gap: 0.8rem; font-size: 0.82rem; font-weight: 600; }
+        .pub-links a { color: var(--accent); display: inline-flex; align-items: center; gap: 0.3rem; }
+        .pub-links a:hover { text-decoration: underline; }
+
         .styled-list { list-style: none; padding: 0; }
         .styled-list li {
             position: relative;
@@ -206,6 +273,17 @@
         .gallery-card img { width: 100%; height: 170px; object-fit: cover; }
         .gallery-card p { padding: 0.8rem; font-size: 0.85rem; font-weight: 500; text-align: center; color: var(--text); }
 
+        /* Collaboration Box */
+        .collab-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .collab-box h3 { color: #0369a1; font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .collab-box p { color: var(--text); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
+
         /* Contact Section */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
         .contact-item {
@@ -238,9 +316,11 @@
             <div class="logo">Dr. Kirubakaran K</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#research-focus">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#publications">Research</a></li>
-                <li><a href="#academics">Conferences & Awards</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#academics">Teaching & Awards</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -252,8 +332,14 @@
         <div class="hero-content">
             <img src="https://media.licdn.com/dms/image/v2/D4D03AQFL_KkghWiOJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706024655621?e=1791417600&v=beta&t=KSN44bD-xKW-WK9EKKczU1WHsgLbWi4iOk338WikNTo" alt="Dr. Kirubakaran K" class="profile-img">
             <h1>Dr. Kirubakaran K</h1>
-            <p>Assistant Professor, Department of ENT-HNS, AIIMS Kalyani</p>
+            <div class="hero-subtitle">ENT–Head & Neck Surgeon | Otology & Cochlear Implantation | AI in Otolaryngology</div>
+            <p>Clinician, surgeon, and researcher working at the intersection of otology, cochlear implantation, skull-base surgery, and artificial intelligence for clinical diagnostics and surgical innovation.</p>
             
+            <div class="hero-actions">
+                <a href="#publications" class="btn"><i class="fa-solid fa-file-lines"></i> View Research & Publications</a>
+                <a href="mailto:kirubakaran.ent@aiimskalyani.edu.in" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV & Contact</a>
+            </div>
+
             <div class="social-icons">
                 <a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
                 <a href="https://in.linkedin.com/in/kirubakaran-k-6827a994" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -266,22 +352,83 @@
     <!-- Main Container -->
     <div class="container">
 
-        <!-- About / Objective -->
-        <div class="card" id="about">
-            <h2><i class="fa-solid fa-user-doctor"></i> Profile & Objectives</h2>
-            <p style="font-size: 1rem; color: var(--text); line-height: 1.7;">
-                Advancing clinical practice, academic teaching, and research in otolaryngology—specializing in otology, advanced rhinology, lateral skull base surgery, and AI applications in medical diagnostics. Committed to clinical excellence, resident mentorship, and institutional surgical development.
-            </p>
+        <!-- Research Focus / Clinical Innovation Identity -->
+        <div class="card" id="research-focus">
+            <h2><i class="fa-solid fa-microscope"></i> Research & Innovation Programme</h2>
+            <div class="grid-4">
+                <div class="focus-card">
+                    <h3><i class="fa-solid fa-ear-listen"></i> Otology & CI</h3>
+                    <p>Cochlear implantation, hearing restoration, auditory rehabilitation, and longitudinal neurophysiological recovery.</p>
+                </div>
+                <div class="focus-card">
+                    <h3><i class="fa-solid fa-brain"></i> AI in ENT</h3>
+                    <p>Computer vision, automated otoscopy, and clinical decision support models for routine diagnostics.</p>
+                </div>
+                <div class="focus-card">
+                    <h3><i class="fa-solid fa-skull"></i> Skull Base</h3>
+                    <p>Endoscopic skull-base surgery, advanced rhinology, CSF leak management, and surgical education.</p>
+                </div>
+                <div class="focus-card">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Translational</h3>
+                    <p>Bridging clinical bottlenecks to engineering solutions, device validation, and implementation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Projects Section -->
+        <div class="card" id="projects">
+            <h2><i class="fa-solid fa-diagram-project"></i> Current Research & Development Projects</h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Active clinical and technological initiatives driving surgical and diagnostic innovation.</p>
+            
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>AURORA-CI</h4>
+                    <p>Longitudinal cortical reorganization and auditory rehabilitation assessment after cochlear implantation.</p>
+                </div>
+                <span class="status-badge status-ongoing">Ongoing Study</span>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>AI Otoscopy</h4>
+                    <p>Real-time deep-learning detection algorithms for automated tympanic membrane abnormality classification.</p>
+                </div>
+                <span class="status-badge status-manuscript">Manuscript Stage</span>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>Inflammatory Endotyping of CRS</h4>
+                    <p>Multicentric histopathology, biofilm interaction, and cytokine profiling in chronic rhinosinusitis.</p>
+                </div>
+                <span class="status-badge status-multicentre">Multicentre Trial</span>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>Clinical ENT AI & Assistive Technologies</h4>
+                    <p>Computer vision and assistive monitoring frameworks designed for routine ENT examination.</p>
+                </div>
+                <span class="status-badge status-ongoing">Development</span>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h4>Advanced Surgical Technology</h4>
+                    <p>Engineering-backed conceptual development for precision otologic and skull-base instruments.</p>
+                </div>
+                <span class="status-badge status-concept">Concept Phase</span>
+            </div>
         </div>
 
         <!-- Professional Experience & Education Grid -->
         <div class="grid-2">
             <div class="card" id="experience" style="margin-bottom: 0;">
-                <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+                <h2><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
                 
                 <div class="timeline-item">
                     <h3>Assistant Professor</h3>
-                    <div class="place">AIIMS Kalyani, West Bengal</div>
+                    <div class="place">Department of ENT-HNS, AIIMS Kalyani, West Bengal</div>
                     <div class="date">January 2025 – Present</div>
                     <p>Leading clinical and surgical ENT services, integrating AI diagnostics, and mentoring residents.</p>
                 </div>
@@ -297,12 +444,12 @@
                     <h3>Senior Resident</h3>
                     <div class="place">PGIMER, Chandigarh</div>
                     <div class="date">Jan 2021 – Jan 2024</div>
-                    <p>Performed advanced surgeries (cochlear implants, FESS, mastoidectomy) and specialized sub-specialty clinics.</p>
+                    <p>Performed advanced surgeries (cochlear implants, FESS, mastoidectomy) and specialized sub-specialty clinics. Contributed to the first Auditory Brainstem Implant surgery team at PGIMER.</p>
                 </div>
             </div>
 
             <div class="card" id="education" style="margin-bottom: 0;">
-                <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                <h2><i class="fa-solid fa-graduation-cap"></i> Education & Identity Note</h2>
                 
                 <div class="timeline-item">
                     <h3>MS in ENT</h3>
@@ -316,7 +463,13 @@
                     <div class="date">December 2015</div>
                 </div>
 
-                <div style="margin-top: 2rem;">
+                <div style="margin-top: 1.5rem; background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+                    <p style="font-size: 0.85rem; color: var(--text-light); line-height: 1.5;">
+                        <strong style="color: var(--primary);">Author Identity Note:</strong> Publications and academic literature authored under <strong>Kothandaraman K</strong> correspond to <strong>Dr. Kirubakaran K</strong>.
+                    </p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
                     <h3 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.8rem;"><i class="fa-solid fa-id-badge" style="color: var(--accent);"></i> Professional Memberships</h3>
                     <div class="tag-group">
                         <span class="tag highlight">IASSA</span>
@@ -330,72 +483,99 @@
         <!-- Research and Publications -->
         <div class="card" id="publications" style="margin-top: 2rem;">
             <h2><i class="fa-solid fa-book-medical"></i> Selected Publications</h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">For a complete and live list of citations and indexed work, visit <a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank" style="color: var(--accent); font-weight: 600;">Google Scholar profile &rarr;</a></p>
+            
             <ol class="pub-list">
-                <li>Chiinhauvung, Mohindra S, Ramavat AS, Sharma A, Sharma S, <strong>Kothandaraman K</strong>. Excision of vocal fold lesions and narrow band imaging: a comparative study. <em>Indian J Otolaryngol Head Neck Surg</em>. 2026;78(2):872-80.</li>
-                <li>Dutta M, Maiti M, Ali H, Mukherjee A, Kharwanlang M, <strong>Kothandaraman K</strong>. An Unusual Co-Existence of Isolated Sphenoidal Fungal Rhinosinusitis and Sphenochoanal Polyp. <em>Ear, Nose & Throat Journal</em>. 2025;01455613251348312.</li>
-                <li>Bhatia MS, Jaiswal AK, Sharma N, <strong>Kothandaraman K</strong>, Bansal S, et al. Percutaneous dilatational tracheostomy compared to surgical tracheostomy for emergency medical patients requiring prolonged mechanical ventilation. <em>Muller J Med Sci Res</em>. 2024;15(2):114-121.</li>
-                <li><strong>Kothandaraman K</strong>, Panda NK, Patro SK. Evaluating the efficacy of a novel periosteal flap in cochlear implantation: a retrospective surgical audit at a tertiary teaching hospital. <em>Egyptian J Otolaryngol</em>. 2024;40(1):56.</li>
-                <li><strong>Kothandaraman K</strong>, Mohindra S, Panda NK, Nayak GR, Munjal S. Unveiling the Allergy-Meniere Connection: Impact of Allergen Positivity on Meniere's Disease Severity. <em>Indian J Otolaryngol Head Neck Surg</em>. 2024;76(2):1509-15.</li>
-                <li>Raj R, Rathod R, Bansal S, Gopal KR, <strong>Kothandaraman K</strong>, Kaur H, et al. Surveillance for COVID-19 associated mucormycosis. <em>Ann Indian Acad Otorhinolaryngol Head Neck Surg</em>. 2024;8(1):1-15.</li>
-                <li><strong>Kothandaraman K</strong>, Mohindra S, Arungovind K, Mahendru S. Prevalence of Common Aeroallergens in Allergic Rhinitis and Correlation with Bronchial Asthma: Study on 798 Patients. <em>Indian J Otolaryngol Head Neck Surg</em>. 2023;75(3):1651-9.</li>
-                <li><strong>Kothandaraman K</strong>, Gupta R. Idiopathic acquired dacryocystocele in an adult: case report of a rare entity. <em>Egyptian J Otolaryngol</em>. 2022;38(1):151.</li>
-                <li>Vijayakumar A, <strong>Kothandaraman K</strong>, Patro SK. Intention to treat versus per protocol analysis in papillary thyroid microcarcinoma trials. <em>Eur Arch Otorhinolaryngol</em>. 2022.</li>
-                <li>Roshan K, Verma K, <strong>Kothandaraman K</strong>. The triad of denial, neglect, behavioral disorder causing habitual multiple foreign body ingestion. <em>J Laryngol Voice</em>. 2022;12(1):11-4.</li>
+                <li>
+                    Chiinhauvung, Mohindra S, Ramavat AS, Sharma A, Sharma S, <strong>Kothandaraman K</strong>. Excision of vocal fold lesions and narrow band imaging: a comparative study. <em>Indian J Otolaryngol Head Neck Surg</em>. 2026;78(2):872-80.
+                    <div class="pub-links"><a href="https://scholar.google.com/citations?user=FE-bmD8AAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i> View on Scholar</a></div>
+                </li>
+                <li>
+                    Dutta M, Maiti M, Ali H, Mukherjee A, Kharwanlang M, <strong>Kothandaraman K</strong>. An Unusual Co-Existence of Isolated Sphenoidal Fungal Rhinosinusitis and Sphenochoanal Polyp. <em>Ear, Nose & Throat Journal</em>. 2025;01455613251348312.
+                    <div class="pub-links"><a href="https://doi.org/10.1177/01455613251348312" target="_blank"><i class="fa-solid fa-link"></i> DOI / Full Text</a></div>
+                </li>
+                <li>
+                    Bhatia MS, Jaiswal AK, Sharma N, <strong>Kothandaraman K</strong>, Bansal S, et al. Percutaneous dilatational tracheostomy compared to surgical tracheostomy for emergency medical patients requiring prolonged mechanical ventilation. <em>Muller J Med Sci Res</em>. 2024;15(2):114-121.
+                </li>
+                <li>
+                    <strong>Kothandaraman K</strong>, Panda NK, Patro SK. Evaluating the efficacy of a novel periosteal flap in cochlear implantation: a retrospective surgical audit at a tertiary teaching hospital. <em>Egyptian J Otolaryngol</em>. 2024;40(1):56.
+                    <div class="pub-links"><a href="https://doi.org/10.1186/s43163-024-0056-x" target="_blank"><i class="fa-solid fa-link"></i> DOI</a></div>
+                </li>
+                <li>
+                    <strong>Kothandaraman K</strong>, Mohindra S, Panda NK, Nayak GR, Munjal S. Unveiling the Allergy-Meniere Connection: Impact of Allergen Positivity on Meniere's Disease Severity. <em>Indian J Otolaryngol Head Neck Surg</em>. 2024;76(2):1509-15.
+                </li>
+                <li>
+                    Raj R, Rathod R, Bansal S, Gopal KR, <strong>Kothandaraman K</strong>, Kaur H, et al. Surveillance for COVID-19 associated mucormycosis. <em>Ann Indian Acad Otorhinolaryngol Head Neck Surg</em>. 2024;8(1):1-15.
+                </li>
+                <li>
+                    <strong>Kothandaraman K</strong>, Mohindra S, Arungovind K, Mahendru S. Prevalence of Common Aeroallergens in Allergic Rhinitis and Correlation with Bronchial Asthma: Study on 798 Patients. <em>Indian J Otolaryngol Head Neck Surg</em>. 2023;75(3):1651-9.
+                    <div class="pub-links"><a href="https://doi.org/10.1007/s12070-023-03643-2" target="_blank"><i class="fa-solid fa-link"></i> DOI</a></div>
+                </li>
+                <li>
+                    <strong>Kothandaraman K</strong>, Gupta R. Idiopathic acquired dacryocystocele in an adult: case report of a rare entity. <em>Egyptian J Otolaryngol</em>. 2022;38(1):151.
+                    <div class="pub-links"><a href="https://doi.org/10.1186/s43163-022-00343-6" target="_blank"><i class="fa-solid fa-link"></i> DOI</a></div>
+                </li>
+                <li>
+                    Vijayakumar A, <strong>Kothandaraman K</strong>, Patro SK. Intention to treat versus per protocol analysis in papillary thyroid microcarcinoma trials. <em>Eur Arch Otorhinolaryngol</em>. 2022.
+                    <div class="pub-links"><a href="https://doi.org/10.1007/s00405-021-07145-1" target="_blank"><i class="fa-solid fa-link"></i> DOI</a></div>
+                </li>
+                <li>
+                    Roshan K, Verma K, <strong>Kothandaraman K</strong>. The triad of denial, neglect, behavioral disorder causing habitual multiple foreign body ingestion. <em>J Laryngol Voice</em>. 2022;12(1):11-4.
+                </li>
             </ol>
         </div>
 
-        <!-- Awards, Talks, Presentations & Workshops -->
+        <!-- Teaching & Surgical Education -->
         <div class="card" id="academics">
-            <h2><i class="fa-solid fa-award"></i> Awards, Presentations & Workshops</h2>
+            <h2><i class="fa-solid id-card-clip"></i> Teaching & Surgical Education</h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Dedicated faculty involvement in cadaveric training, skull-base courses, resident mentorship, and surgical workshops.</p>
             
             <div class="grid-2" style="margin-bottom: 2.5rem;">
                 <div>
                     <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-trophy" style="color: #eab308;"></i> Awards & Honors</h3>
                     <ul class="styled-list">
-                        <li><strong>Best Faculty Poster Award</strong> (Dr Anoop Roy award, faculty category) – Sphenoid sinus lateral recess CSF leak, RHINOCON (November 2025).</li>
+                        <li><strong>Best Faculty Poster Award</strong> (Dr Anoop Roy Award) – Sphenoid sinus lateral recess CSF leak, RHINOCON (Nov 2025).</li>
                         <li><strong>First Place</strong> – Sleep Apnea Quiz, IASSACON (2022).</li>
                         <li><strong>First Place</strong> – Poster Presentation, IAOHNS (2023).</li>
-                        <li><strong>Best Dissection Award</strong> – Hands-on Training Course in Laryngotracheal Reconstruction, PGIMER (2021).</li>
+                        <li><strong>Best Dissection Award</strong> – Laryngotracheal Reconstruction Course, PGIMER (2021).</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i> Invited Talks & Presentations</h3>
+                    <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-chalkboard-user" style="color: var(--accent);"></i> Invited Faculty Talks & Presentations</h3>
                     <ul class="styled-list">
-                        <li>Talk on Laryngotracheal Trauma – Advanced Laryngotracheal Workshop, AIIMS Kalyani (September 2025).</li>
-                        <li>Invited Talk on Acute Airway Management of Laryngotracheal Trauma – COHNS (October 2025).</li>
-                        <li>Poster Presentation on Sphenoid Sinus Lateral Recess CSF Leak – RHINOCON (November 2025).</li>
-                        <li>Invited Talk on Posterior Fossa CSF Leak – Neurosurgery Update, SGPGI Lucknow (April 2025).</li>
-                        <li>Invited Talk on Principles of Endoscopic Endonasal Skull Base Surgery – AIIMS ORL Conclave (March 2026).</li>
-                        <li>Served as Quiz Master in Residents Quiz – ORL-HNS Conclave (March 2026).</li>
-                        <li>Served as Judge in Residents' Paper Presentation – ORL-HNS Conclave (March 2026).</li>
-                        <li>Poster Presentation: Posterior Fossa CSF Leak (Common Symptoms and Uncommon Diagnosis) – 1st Annual Conference of All India Rhinology Society (2023).</li>
-                        <li>Paper Presentation: Factors Predicting Surgical Success of Palatal Surgeries in OSA – 9th IASSACON (2022).</li>
+                        <li>Talk on Laryngotracheal Trauma – Advanced Laryngotracheal Workshop, AIIMS Kalyani (Sep 2025).</li>
+                        <li>Invited Talk on Acute Airway Management of Laryngotracheal Trauma – COHNS (Oct 2025).</li>
+                        <li>Poster Presentation on Sphenoid Sinus Lateral Recess CSF Leak – RHINOCON (Nov 2025).</li>
+                        <li>Invited Talk on Posterior Fossa CSF Leak – Neurosurgery Update, SGPGI Lucknow (Apr 2025).</li>
+                        <li>Invited Talk on Principles of Endoscopic Endonasal Skull Base Surgery – AIIMS ORL Conclave (Mar 2026).</li>
+                        <li>Served as Quiz Master & Judge in Residents' Sessions – ORL-HNS Conclave (Mar 2026).</li>
+                        <li>Poster Presentation: Posterior Fossa CSF Leak – 1st Annual Conference of All India Rhinology Society (2023).</li>
                     </ul>
                 </div>
             </div>
 
             <div>
-                <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent);"></i> Conferences & Professional Workshops Attended</h3>
+                <h3 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-screwdriver-wrench" style="color: var(--accent);"></i> Conferences, Workshops & Organizer Roles</h3>
                 <ul class="styled-list" style="columns: 2; column-gap: 2rem;">
-                    <li>2025 Global Grand Rounds: Challenges & Controversies in Pediatric Otolaryngology (Delegate, March 2025)</li>
-                    <li>Systematic Review & Meta-Analysis Workshop (Participant, March 2025)</li>
-                    <li>Faculty Development Programme (FDP), AIIMS Kalyani (Participant, March 2025)</li>
-                    <li>Surgery to Speech AVT Therapy Workshop, Cochlear Office, Mumbai (Participant, July 2025)</li>
-                    <li>CI ACCELERATE Surgical Workshop (Participant, September 2025)</li>
-                    <li>Meta-Analysis with R Workshop (Participant, July 2025)</li>
-                    <li>Workshop on Grant Writing, MRU (Participant, February 2026)</li>
-                    <li>Workshop on FEES & PHONOCON (Participant, February 2026)</li>
-                    <li>Advanced Laryngotracheal Surgery Cadaveric Dissection Workshop (Organizer/Faculty, AIIMS Kalyani, September 2025)</li>
-                    <li>Endoscopic Skull Base Surgery Cadaveric Course, Jodhpur (Participant, January 2025)</li>
+                    <li>Advanced Laryngotracheal Surgery Cadaveric Dissection Workshop (Organizer/Faculty, AIIMS Kalyani, Sep 2025)</li>
+                    <li>2025 Global Grand Rounds: Pediatric Otolaryngology (Delegate, Mar 2025)</li>
+                    <li>Systematic Review & Meta-Analysis Workshop (Participant, Mar 2025)</li>
+                    <li>Faculty Development Programme (FDP), AIIMS Kalyani (Participant, Mar 2025)</li>
+                    <li>Surgery to Speech AVT Therapy Workshop, Mumbai (Participant, Jul 2025)</li>
+                    <li>CI ACCELERATE Surgical Workshop (Participant, Sep 2025)</li>
+                    <li>Meta-Analysis with R Workshop (Participant, Jul 2025)</li>
+                    <li>Workshop on Grant Writing, MRU (Participant, Feb 2026)</li>
+                    <li>Workshop on FEES & PHONOCON (Participant, Feb 2026)</li>
+                    <li>Endoscopic Skull Base Surgery Cadaveric Course, Jodhpur (Participant, Jan 2025)</li>
                     <li>IASSACON 2024, Chennai (Delegate)</li>
-                    <li>CIGICON 2024 & CI Dissection Workshop (Delegate and Dissector)</li>
-                    <li>9th AIIMS Facial Plastics Workshop (Delegate and Observer, 2022)</li>
-                    <li>9th IASSACON and Calculate Sleep Course (Delegate, Presenter & Quiz Winner, 2022)</li>
+                    <li>CIGICON 2024 & CI Dissection Workshop (Delegate & Dissector)</li>
+                    <li>9th AIIMS Facial Plastics Workshop (Delegate & Observer, 2022)</li>
+                    <li>9th IASSACON & Calculate Sleep Course (Delegate, Presenter & Quiz Winner, 2022)</li>
                     <li>FRCST 10th National Facial Plastics Course (Dissecting Surgeon)</li>
                     <li>1st Annual Conference of All India Rhinology Society (Delegate, 2019)</li>
-                    <li>12th Hands-on Workshop, Head & Neck Dissection, Basic/Advanced FESS, & 18th Temporal Bone Dissection Course (Organizer, 2019)</li>
-                    <li>Hands-on Workshop on Allergen Immunotherapy Management, PGIMER (Delegate, November 2018)</li>
+                    <li>12th Hands-on Workshop, Head & Neck Dissection, Basic/Advanced FESS & Temporal Bone Dissection Course (Organizer, 2019)</li>
+                    <li>Hands-on Workshop on Allergen Immunotherapy Management, PGIMER (Delegate, Nov 2018)</li>
                     <li>32nd Annual Conference of All India Rhinology Society (Delegate & Quiz Runner-Up, 2019)</li>
                     <li>Hands-on Training Course in Laryngotracheal Reconstruction, PGIMER (Delegate & Best Dissection Award, 2019)</li>
                 </ul>
@@ -404,8 +584,8 @@
 
         <!-- Horizontal Scrolling Photo Gallery -->
         <div class="card" id="gallery">
-            <h2><i class="fa-solid fa-images"></i> Gallery</h2>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Scroll horizontally to explore workshop sessions, conferences, and surgical events.</p>
+            <h2><i class="fa-solid fa-images"></i> Visual Portfolio & Gallery</h2>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Scroll horizontally to explore workshop sessions, cadaveric dissections, and academic conferences.</p>
             
             <div class="horizontal-gallery">
                 <div class="gallery-card">
@@ -427,8 +607,17 @@
             </div>
         </div>
 
+        <!-- Collaboration Section -->
+        <div class="card" style="padding: 0; background: transparent; border: none; box-shadow: none;">
+            <div class="collab-box">
+                <h3><i class="fa-solid fa-handshake"></i> Open for Collaborations</h3>
+                <p>Interested in collaborative research or academic exchange involving Otology, Cochlear Implantation, Clinical AI / Computer Vision, Medical Device Development, or Multicentric Studies?</p>
+                <a href="mailto:kirubakaran.ent@aiimskalyani.edu.in" class="btn"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+            </div>
+        </div>
+
         <!-- Contact Section -->
-        <div class="card" id="contact">
+        <div class="card" id="contact" style="margin-top: 2rem;">
             <h2><i class="fa-solid fa-address-book"></i> Contact Information</h2>
             <div class="contact-grid">
                 <div class="contact-item">
@@ -454,7 +643,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Dr. Kirubakaran K. All Rights Reserved.</p>
+        <p>&copy; 2026 Dr. Kirubakaran K. All Rights Reserved. Designed for Professional Academic & Clinical Networking.</p>
     </footer>
 
 </body>
