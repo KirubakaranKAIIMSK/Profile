@@ -48,7 +48,7 @@
             padding: 1rem 2rem;
         }
 
-        .logo { font-weight: 700; font-size: 1.15xl; color: var(--primary); letter-spacing: -0.5px; background: linear-gradient(135deg, #2563eb, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo { font-weight: 700; font-size: 1.15rem; color: var(--primary); letter-spacing: -0.5px; background: linear-gradient(135deg, #2563eb, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: flex; list-style: none; gap: 1.5rem; flex-wrap: wrap; }
         .nav-links a { font-weight: 500; font-size: 0.9rem; color: var(--text-light); transition: var(--transition); }
         .nav-links a:hover { color: var(--accent); }
@@ -168,7 +168,7 @@
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
 
-        /* Research Focus Cards with Vibrant Borders */
+        /* Research Focus Cards */
         .focus-card {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             border: 1px solid var(--border);
@@ -539,27 +539,15 @@
             </div>
         </div>
 
-        <!-- Horizontal Scrolling Photo Gallery -->
+        <!-- Automatic GitHub Folder Auto-Loading Photo Gallery -->
         <div class="card" id="gallery">
             <h2><i class="fa-solid fa-images"></i> Visual Portfolio & Gallery</h2>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Scroll horizontally to explore workshop sessions, cadaveric dissections, and academic conferences.</p>
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Any picture you upload into your GitHub <code>images/</code> folder automatically appears here instantly. The caption is derived from the filename.</p>
             
-            <div class="horizontal-gallery">
+            <!-- Dynamic Container where GitHub images load automatically -->
+            <div class="horizontal-gallery" id="github-gallery">
                 <div class="gallery-card">
-                    <img src="images/photo1.jpg" alt="Workshop Session" onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=500&q=80'">
-                    <p>AIIMS Kalyani Workshop</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="images/photo2.jpg" alt="Conference Presentation" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80'">
-                    <p>RHINOCON Conference</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="images/photo3.jpg" alt="Surgical Theater" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500&q=80'">
-                    <p>Operating Theater Work</p>
-                </div>
-                <div class="gallery-card">
-                    <img src="images/photo4.jpg" alt="Academic Meet" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80'">
-                    <p>Academic Presentation</p>
+                    <p style="padding: 2rem; color: var(--text-light);">Loading images from GitHub...</p>
                 </div>
             </div>
         </div>
@@ -603,5 +591,72 @@
         <p>&copy; 2026 Dr. Kirubakaran K. All Rights Reserved. Designed for Professional Academic & Clinical Networking.</p>
     </footer>
 
+    <!-- AUTOMATIC GITHUB FOLDER LOADER SCRIPT -->
+    <script>
+        async function loadGitHubGallery() {
+            const repoOwner = "KirubakaranKAIMSK"; // Your GitHub username from your repo URL
+            const repoName = "Profile";          // Your GitHub repository name
+            const folderPath = "images";         // The folder containing your images
+            const galleryContainer = document.getElementById('github-gallery');
+
+            const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error("Could not fetch repository contents.");
+                
+                const files = await response.json();
+                
+                // Filter only image files (.jpg, .jpeg, .png, .webp) and exclude profile.jpg if it's there
+                const imageFiles = files.filter(file => 
+                    file.type === 'file' && 
+                    /\.(jpg|jpeg|png|webp)$/i.test(file.name) && 
+                    file.name.toLowerCase() !== 'profile.jpg'
+                );
+
+                if (imageFiles.length === 0) {
+                    galleryContainer.innerHTML = '<div class="gallery-card"><p style="padding: 2rem; color: var(--text-light);">No gallery images found in the GitHub images folder yet.</p></div>';
+                    return;
+                }
+
+                // Clear loading state
+                galleryContainer.innerHTML = '';
+
+                // Loop through each image and build the card dynamically
+                imageFiles.forEach(file => {
+                    // Turn filename into a clean caption (e.g., "aiims-kalyani-workshop.jpg" -> "Aiims Kalyani Workshop")
+                    let rawName = file.name.substring(0, file.name.lastIndexOf('.'));
+                    let caption = rawName.replace(/[-_]/g, ' ');
+                    caption = caption.charAt(0).toUpperCase() + caption.slice(1);
+
+                    const card = document.createElement('div');
+                    card.className = 'gallery-card';
+                    card.innerHTML = `
+                        <img src="${file.download_url}" alt="${caption}" loading="lazy">
+                        <p>${caption}</p>
+                    `;
+                    galleryContainer.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error("Error loading gallery:", error);
+                // Fallback stock visuals if API request fails or limits are reached
+                galleryContainer.innerHTML = `
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=500&q=80" alt="Workshop">
+                        <p>AIIMS Kalyani Workshop</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80" alt="Conference">
+                        <p>Academic Conference</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Run the automatic loader when the page loads
+        document.addEventEventListener('DOMContentLoaded', loadGitHubGallery);
+        window.onload = loadGitHubGallery;
+    </script>
 </body>
 </html>
